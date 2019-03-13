@@ -20,11 +20,7 @@ describe('Name of the group', () => {
             .expect('Hello')
     })
 
-    // Alternative 3:
-    test('should return student details with status code 200', async() => {
-        await request(app)
-            .get('/students')
-            .expect(200)
-            .expect('These are students')
-    })
+    // Alternative 3: test('should return student details with status code 200',
+    // async() => {     await request(app)         .get('/students')
+    // .expect(200)         .expect('') })
 })
