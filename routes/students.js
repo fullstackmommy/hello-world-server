@@ -21,9 +21,11 @@ router
     })
     .post((req, res, next) => {
         const student = req.body
-        student.id = '123'
-        res.status(201)
-        res.json(student)
+        student.id = '1232421421'
+        student.subjects = []
+        res
+            .status(201)
+            .json(student)
     })
 
 router

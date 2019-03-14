@@ -30,10 +30,17 @@ describe('Students', () => {
         test("Register a student", () => {
             return request(app)
                 .post(route)
-                .send({name: "john"})
+                .send({name: "Bob"})
                 .set("Accept", "application/json")
                 .expect(201)
-                .expect({id: "123", name: "john"})
+                .then(res => {
+                    expect(res.body).toEqual(expect.any(Object))
+                    expect(res.body).toEqual({
+                        id: expect.any(String),
+                        name: "Bob",
+                        subjects: expect.any(Array)
+                    })
+                })
         })
     })
 
